@@ -1,11 +1,6 @@
 pipeline {
-    agent {
-		docker{
-			image 'maven:latest'
-			args '-v $HOME/.m2:/root/.m2:z -u root'
-            reuseNode true
-		}
-		}
+    agent any
+    
 
     stages {
         stage('Build') {
