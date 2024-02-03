@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+		docker{
+			image 'maven:latest'
+			args '-v $HOME/.m2:/root/.m2:z -u root'
+            reuseNode true
+		}
 
     stages {
         stage('Build') {
@@ -8,6 +13,7 @@ pipeline {
                 git 'https://github.com/KompleteAutomation/petadoption.git'
 
                 // Run Maven Wrapper Commands
+                
                 sh "./mvnw compile"
 
                 echo 'Building the Project with maven compile'
