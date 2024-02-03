@@ -9,7 +9,7 @@ pipeline {
                 
                 git 'https://github.com/KompleteAutomation/petadoption.git'
 				//sudo su
-				sh "chmod +x -R ${env.WORKSPACE}/TestApp@tmp"
+				//sh "chmod +x -R ${env.WORKSPACE}/TestApp@tmp"
                 // Run Maven Wrapper Commands
                 sh "./mvnw compile"
 
