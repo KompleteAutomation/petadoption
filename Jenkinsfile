@@ -6,6 +6,7 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 git 'update-index --chmod=+x check_services.sh'
+                
                 git 'https://github.com/KompleteAutomation/petadoption.git'
 				//sudo su
 				//sh "chmod +x -R ${env.WORKSPACE}"
