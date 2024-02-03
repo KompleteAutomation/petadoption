@@ -6,7 +6,8 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/KompleteAutomation/petadoption.git'
-				sh "chmod +x -R ${env.WORKSPACE}"
+				sudo su
+				//sh "chmod +x -R ${env.WORKSPACE}"
                 // Run Maven Wrapper Commands
                 sh "./mvnw compile"
 
